@@ -1,0 +1,2280 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20243.24.1010.1014                               -->
+<workbook original-version='18.1' source-build='2024.3.0 (20243.24.1010.1014)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <BasicButtonObject />
+    <BasicButtonObjectTextSupport />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SingleValuePerNestSorting />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='student_performance_fact+' inline='true' name='federated.1noe7e81ylplya1gyrexs0pk33ry' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='student_performance_fact' name='textscan.10oiwza0fhjo811h8o24u1bwuar5'>
+            <connection class='textscan' directory='E:/Downloads/tables' filename='student_performance_fact.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.10oiwza0fhjo811h8o24u1bwuar5' name='student_performance_fact.csv' table='[student_performance_fact#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='student_id' ordinal='0' />
+              <column datatype='integer' name='age' ordinal='1' />
+              <column datatype='integer' name='gender' ordinal='2' />
+              <column datatype='string' name='grade_level' ordinal='3' />
+              <column datatype='string' name='course_name' ordinal='4' />
+              <column datatype='string' name='final_grade' ordinal='5' />
+              <column datatype='real' name='gpa' ordinal='6' />
+              <column datatype='integer' name='attendance_rate' ordinal='7' />
+              <column datatype='integer' name='online_learning_hours' ordinal='8' />
+              <column datatype='integer' name='class_participation_score' ordinal='9' />
+              <column datatype='string' name='attendance_performance' ordinal='10' />
+              <column datatype='real' name='course_gpa_avg' ordinal='11' />
+              <column datatype='string' name='course_difficulty' ordinal='12' />
+            </columns>
+          </relation>
+          <relation connection='textscan.10oiwza0fhjo811h8o24u1bwuar5' name='course.csv' table='[course#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='course_id' ordinal='0' />
+              <column datatype='string' name='course_name' ordinal='1' />
+              <column datatype='real' name='course_gpa_avg' ordinal='2' />
+              <column datatype='string' name='course_difficulty' ordinal='3' />
+            </columns>
+          </relation>
+          <relation connection='textscan.10oiwza0fhjo811h8o24u1bwuar5' name='grade.csv' table='[grade#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='id_finalgrade' ordinal='0' />
+              <column datatype='string' name='final_grade' ordinal='1' />
+            </columns>
+          </relation>
+          <relation connection='textscan.10oiwza0fhjo811h8o24u1bwuar5' name='performance.csv' table='[performance#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='id_attendancep' ordinal='0' />
+              <column datatype='string' name='attendance_performance' ordinal='1' />
+            </columns>
+          </relation>
+          <relation connection='textscan.10oiwza0fhjo811h8o24u1bwuar5' name='student.csv' table='[student#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='student_id' ordinal='0' />
+              <column datatype='integer' name='age' ordinal='1' />
+              <column datatype='integer' name='gender' ordinal='2' />
+              <column datatype='string' name='grade_level' ordinal='3' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[age (student.csv)]' value='[student.csv].[age]' />
+          <map key='[age]' value='[student_performance_fact.csv].[age]' />
+          <map key='[attendance_performance (performance.csv)]' value='[performance.csv].[attendance_performance]' />
+          <map key='[attendance_performance]' value='[student_performance_fact.csv].[attendance_performance]' />
+          <map key='[attendance_rate]' value='[student_performance_fact.csv].[attendance_rate]' />
+          <map key='[class_participation_score]' value='[student_performance_fact.csv].[class_participation_score]' />
+          <map key='[course_difficulty (course.csv)]' value='[course.csv].[course_difficulty]' />
+          <map key='[course_difficulty]' value='[student_performance_fact.csv].[course_difficulty]' />
+          <map key='[course_gpa_avg (course.csv)]' value='[course.csv].[course_gpa_avg]' />
+          <map key='[course_gpa_avg]' value='[student_performance_fact.csv].[course_gpa_avg]' />
+          <map key='[course_id]' value='[course.csv].[course_id]' />
+          <map key='[course_name (course.csv)]' value='[course.csv].[course_name]' />
+          <map key='[course_name]' value='[student_performance_fact.csv].[course_name]' />
+          <map key='[final_grade (grade.csv)]' value='[grade.csv].[final_grade]' />
+          <map key='[final_grade]' value='[student_performance_fact.csv].[final_grade]' />
+          <map key='[gender (student.csv)]' value='[student.csv].[gender]' />
+          <map key='[gender]' value='[student_performance_fact.csv].[gender]' />
+          <map key='[gpa]' value='[student_performance_fact.csv].[gpa]' />
+          <map key='[grade_level (student.csv)]' value='[student.csv].[grade_level]' />
+          <map key='[grade_level]' value='[student_performance_fact.csv].[grade_level]' />
+          <map key='[id_attendancep]' value='[performance.csv].[id_attendancep]' />
+          <map key='[id_finalgrade]' value='[grade.csv].[id_finalgrade]' />
+          <map key='[online_learning_hours]' value='[student_performance_fact.csv].[online_learning_hours]' />
+          <map key='[student_id (student.csv)]' value='[student.csv].[student_id]' />
+          <map key='[student_id]' value='[student_performance_fact.csv].[student_id]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[student_performance_fact.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[course.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[grade.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[performance.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[student.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>student_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[student_id]</local-name>
+            <parent-name>[student_performance_fact.csv]</parent-name>
+            <remote-alias>student_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>age</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[age]</local-name>
+            <parent-name>[student_performance_fact.csv]</parent-name>
+            <remote-alias>age</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gender</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[gender]</local-name>
+            <parent-name>[student_performance_fact.csv]</parent-name>
+            <remote-alias>gender</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>grade_level</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[grade_level]</local-name>
+            <parent-name>[student_performance_fact.csv]</parent-name>
+            <remote-alias>grade_level</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>course_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[course_name]</local-name>
+            <parent-name>[student_performance_fact.csv]</parent-name>
+            <remote-alias>course_name</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>final_grade</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[final_grade]</local-name>
+            <parent-name>[student_performance_fact.csv]</parent-name>
+            <remote-alias>final_grade</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gpa</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[gpa]</local-name>
+            <parent-name>[student_performance_fact.csv]</parent-name>
+            <remote-alias>gpa</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>attendance_rate</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[attendance_rate]</local-name>
+            <parent-name>[student_performance_fact.csv]</parent-name>
+            <remote-alias>attendance_rate</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>online_learning_hours</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[online_learning_hours]</local-name>
+            <parent-name>[student_performance_fact.csv]</parent-name>
+            <remote-alias>online_learning_hours</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>class_participation_score</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[class_participation_score]</local-name>
+            <parent-name>[student_performance_fact.csv]</parent-name>
+            <remote-alias>class_participation_score</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>attendance_performance</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[attendance_performance]</local-name>
+            <parent-name>[student_performance_fact.csv]</parent-name>
+            <remote-alias>attendance_performance</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>course_gpa_avg</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[course_gpa_avg]</local-name>
+            <parent-name>[student_performance_fact.csv]</parent-name>
+            <remote-alias>course_gpa_avg</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>course_difficulty</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[course_difficulty]</local-name>
+            <parent-name>[student_performance_fact.csv]</parent-name>
+            <remote-alias>course_difficulty</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>course_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[course_id]</local-name>
+            <parent-name>[course.csv]</parent-name>
+            <remote-alias>course_id</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[course.csv_70615F661D4741E4BAE57330D50B218C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>course_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[course_name (course.csv)]</local-name>
+            <parent-name>[course.csv]</parent-name>
+            <remote-alias>course_name</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[course.csv_70615F661D4741E4BAE57330D50B218C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>course_gpa_avg</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[course_gpa_avg (course.csv)]</local-name>
+            <parent-name>[course.csv]</parent-name>
+            <remote-alias>course_gpa_avg</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[course.csv_70615F661D4741E4BAE57330D50B218C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>course_difficulty</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[course_difficulty (course.csv)]</local-name>
+            <parent-name>[course.csv]</parent-name>
+            <remote-alias>course_difficulty</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[course.csv_70615F661D4741E4BAE57330D50B218C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id_finalgrade</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[id_finalgrade]</local-name>
+            <parent-name>[grade.csv]</parent-name>
+            <remote-alias>id_finalgrade</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[grade.csv_C38C653DB4084CE5946DB80A4A0DE0C9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>final_grade</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[final_grade (grade.csv)]</local-name>
+            <parent-name>[grade.csv]</parent-name>
+            <remote-alias>final_grade</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[grade.csv_C38C653DB4084CE5946DB80A4A0DE0C9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id_attendancep</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[id_attendancep]</local-name>
+            <parent-name>[performance.csv]</parent-name>
+            <remote-alias>id_attendancep</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[performance.csv_F98BB444FACE408C9CA3DF42207D372C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>attendance_performance</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[attendance_performance (performance.csv)]</local-name>
+            <parent-name>[performance.csv]</parent-name>
+            <remote-alias>attendance_performance</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[performance.csv_F98BB444FACE408C9CA3DF42207D372C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>student_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[student_id (student.csv)]</local-name>
+            <parent-name>[student.csv]</parent-name>
+            <remote-alias>student_id</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[student.csv_AA1D9BB5540048C0A92FB922F42DD746]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>age</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[age (student.csv)]</local-name>
+            <parent-name>[student.csv]</parent-name>
+            <remote-alias>age</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[student.csv_AA1D9BB5540048C0A92FB922F42DD746]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gender</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[gender (student.csv)]</local-name>
+            <parent-name>[student.csv]</parent-name>
+            <remote-alias>gender</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[student.csv_AA1D9BB5540048C0A92FB922F42DD746]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>grade_level</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[grade_level (student.csv)]</local-name>
+            <parent-name>[student.csv]</parent-name>
+            <remote-alias>grade_level</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[student.csv_AA1D9BB5540048C0A92FB922F42DD746]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column aggregation='None' caption='Attendance Rate (bin)' datatype='integer' name='[Attendance Rate (bin)]' role='dimension' type='ordinal'>
+        <calculation class='bin' decimals='-2' formula='[attendance_rate]' peg='0' size='4.52' />
+      </column>
+      <column caption='course.csv' datatype='table' name='[__tableau_internal_object_id__].[course.csv_70615F661D4741E4BAE57330D50B218C]' role='measure' type='quantitative' />
+      <column caption='grade.csv' datatype='table' name='[__tableau_internal_object_id__].[grade.csv_C38C653DB4084CE5946DB80A4A0DE0C9]' role='measure' type='quantitative' />
+      <column caption='performance.csv' datatype='table' name='[__tableau_internal_object_id__].[performance.csv_F98BB444FACE408C9CA3DF42207D372C]' role='measure' type='quantitative' />
+      <column caption='student.csv' datatype='table' name='[__tableau_internal_object_id__].[student.csv_AA1D9BB5540048C0A92FB922F42DD746]' role='measure' type='quantitative' />
+      <column caption='student_performance_fact.csv' datatype='table' name='[__tableau_internal_object_id__].[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]' role='measure' type='quantitative' />
+      <column caption='Age (Student.Csv)' datatype='integer' name='[age (student.csv)]' role='measure' type='quantitative' />
+      <column caption='Age' datatype='integer' name='[age]' role='measure' type='quantitative' />
+      <column caption='Attendance Performance (Performance.Csv)' datatype='string' name='[attendance_performance (performance.csv)]' role='dimension' type='nominal' />
+      <column caption='Attendance Performance' datatype='string' name='[attendance_performance]' role='dimension' type='nominal' />
+      <column caption='Attendance Rate' datatype='integer' name='[attendance_rate]' role='measure' type='quantitative' />
+      <column caption='Class Participation Score' datatype='integer' name='[class_participation_score]' role='measure' type='quantitative' />
+      <column caption='Course Difficulty (Course.Csv)' datatype='string' name='[course_difficulty (course.csv)]' role='dimension' type='nominal' />
+      <column caption='Course Difficulty' datatype='string' name='[course_difficulty]' role='dimension' type='nominal' />
+      <column caption='Course Gpa Avg (Course.Csv)' datatype='real' name='[course_gpa_avg (course.csv)]' role='measure' type='quantitative' />
+      <column caption='Course Gpa Avg' datatype='real' name='[course_gpa_avg]' role='measure' type='quantitative' />
+      <column caption='Course Id' datatype='integer' name='[course_id]' role='dimension' type='ordinal' />
+      <column caption='Course Name (Course.Csv)' datatype='string' name='[course_name (course.csv)]' role='dimension' type='nominal' />
+      <column caption='Course Name' datatype='string' name='[course_name]' role='dimension' type='nominal' />
+      <column caption='Final Grade (Grade.Csv)' datatype='string' name='[final_grade (grade.csv)]' role='dimension' type='nominal' />
+      <column caption='Final Grade' datatype='string' name='[final_grade]' role='dimension' type='nominal' />
+      <column caption='Gender (Student.Csv)' datatype='integer' name='[gender (student.csv)]' role='measure' type='quantitative' />
+      <column caption='Gender' datatype='integer' name='[gender]' role='measure' type='quantitative' />
+      <column caption='Gpa' datatype='real' name='[gpa]' role='measure' type='quantitative' />
+      <column caption='Grade Level (Student.Csv)' datatype='string' name='[grade_level (student.csv)]' role='dimension' type='nominal' />
+      <column caption='Grade Level' datatype='string' name='[grade_level]' role='dimension' type='nominal' />
+      <column caption='Id Attendancep' datatype='integer' name='[id_attendancep]' role='dimension' type='ordinal' />
+      <column caption='Id Finalgrade' datatype='integer' name='[id_finalgrade]' role='dimension' type='ordinal' />
+      <column caption='Online Learning Hours' datatype='integer' name='[online_learning_hours]' role='measure' type='quantitative' />
+      <column caption='Student Id (Student.Csv)' datatype='string' name='[student_id (student.csv)]' role='dimension' type='nominal' />
+      <column caption='Student Id' datatype='string' name='[student_id]' role='dimension' type='nominal' />
+      <column-instance column='[grade_level]' derivation='None' name='[none:grade_level:nk]' pivot='key' type='nominal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/maste/AppData/Local/Temp/TableauTemp/#TableauTemp_1rvxhfn1kye3fi1fcbwll1yfsg9h.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='12/19/2024 11:28:09 AM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6' table='[Extract].[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]' type='table' />
+            <relation name='course.csv_70615F661D4741E4BAE57330D50B218C' table='[Extract].[course.csv_70615F661D4741E4BAE57330D50B218C]' type='table' />
+            <relation name='grade.csv_C38C653DB4084CE5946DB80A4A0DE0C9' table='[Extract].[grade.csv_C38C653DB4084CE5946DB80A4A0DE0C9]' type='table' />
+            <relation name='performance.csv_F98BB444FACE408C9CA3DF42207D372C' table='[Extract].[performance.csv_F98BB444FACE408C9CA3DF42207D372C]' type='table' />
+            <relation name='student.csv_AA1D9BB5540048C0A92FB922F42DD746' table='[Extract].[student.csv_AA1D9BB5540048C0A92FB922F42DD746]' type='table' />
+          </relation>
+          <cols>
+            <map key='[age (student.csv)]' value='[student.csv_AA1D9BB5540048C0A92FB922F42DD746].[age]' />
+            <map key='[age]' value='[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6].[age]' />
+            <map key='[attendance_performance (performance.csv)]' value='[performance.csv_F98BB444FACE408C9CA3DF42207D372C].[attendance_performance]' />
+            <map key='[attendance_performance]' value='[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6].[attendance_performance]' />
+            <map key='[attendance_rate]' value='[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6].[attendance_rate]' />
+            <map key='[class_participation_score]' value='[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6].[class_participation_score]' />
+            <map key='[course_difficulty (course.csv)]' value='[course.csv_70615F661D4741E4BAE57330D50B218C].[course_difficulty]' />
+            <map key='[course_difficulty]' value='[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6].[course_difficulty]' />
+            <map key='[course_gpa_avg (course.csv)]' value='[course.csv_70615F661D4741E4BAE57330D50B218C].[course_gpa_avg]' />
+            <map key='[course_gpa_avg]' value='[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6].[course_gpa_avg]' />
+            <map key='[course_id]' value='[course.csv_70615F661D4741E4BAE57330D50B218C].[course_id]' />
+            <map key='[course_name (course.csv)]' value='[course.csv_70615F661D4741E4BAE57330D50B218C].[course_name]' />
+            <map key='[course_name]' value='[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6].[course_name]' />
+            <map key='[final_grade (grade.csv)]' value='[grade.csv_C38C653DB4084CE5946DB80A4A0DE0C9].[final_grade]' />
+            <map key='[final_grade]' value='[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6].[final_grade]' />
+            <map key='[gender (student.csv)]' value='[student.csv_AA1D9BB5540048C0A92FB922F42DD746].[gender]' />
+            <map key='[gender]' value='[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6].[gender]' />
+            <map key='[gpa]' value='[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6].[gpa]' />
+            <map key='[grade_level (student.csv)]' value='[student.csv_AA1D9BB5540048C0A92FB922F42DD746].[grade_level]' />
+            <map key='[grade_level]' value='[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6].[grade_level]' />
+            <map key='[id_attendancep]' value='[performance.csv_F98BB444FACE408C9CA3DF42207D372C].[id_attendancep]' />
+            <map key='[id_finalgrade]' value='[grade.csv_C38C653DB4084CE5946DB80A4A0DE0C9].[id_finalgrade]' />
+            <map key='[online_learning_hours]' value='[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6].[online_learning_hours]' />
+            <map key='[student_id (student.csv)]' value='[student.csv_AA1D9BB5540048C0A92FB922F42DD746].[student_id]' />
+            <map key='[student_id]' value='[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6].[student_id]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>student_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[student_id]</local-name>
+              <parent-name>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</parent-name>
+              <remote-alias>student_id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>student_performance_fact.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1000</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>age</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[age]</local-name>
+              <parent-name>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</parent-name>
+              <remote-alias>age</remote-alias>
+              <ordinal>1</ordinal>
+              <family>student_performance_fact.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>gender</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[gender]</local-name>
+              <parent-name>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</parent-name>
+              <remote-alias>gender</remote-alias>
+              <ordinal>2</ordinal>
+              <family>student_performance_fact.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>grade_level</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[grade_level]</local-name>
+              <parent-name>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</parent-name>
+              <remote-alias>grade_level</remote-alias>
+              <ordinal>3</ordinal>
+              <family>student_performance_fact.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>course_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[course_name]</local-name>
+              <parent-name>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</parent-name>
+              <remote-alias>course_name</remote-alias>
+              <ordinal>4</ordinal>
+              <family>student_performance_fact.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>final_grade</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[final_grade]</local-name>
+              <parent-name>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</parent-name>
+              <remote-alias>final_grade</remote-alias>
+              <ordinal>5</ordinal>
+              <family>student_performance_fact.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>gpa</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[gpa]</local-name>
+              <parent-name>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</parent-name>
+              <remote-alias>gpa</remote-alias>
+              <ordinal>6</ordinal>
+              <family>student_performance_fact.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>202</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>attendance_rate</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[attendance_rate]</local-name>
+              <parent-name>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</parent-name>
+              <remote-alias>attendance_rate</remote-alias>
+              <ordinal>7</ordinal>
+              <family>student_performance_fact.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>55</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>online_learning_hours</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[online_learning_hours]</local-name>
+              <parent-name>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</parent-name>
+              <remote-alias>online_learning_hours</remote-alias>
+              <ordinal>8</ordinal>
+              <family>student_performance_fact.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>54</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>class_participation_score</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[class_participation_score]</local-name>
+              <parent-name>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</parent-name>
+              <remote-alias>class_participation_score</remote-alias>
+              <ordinal>9</ordinal>
+              <family>student_performance_fact.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>60</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>attendance_performance</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[attendance_performance]</local-name>
+              <parent-name>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</parent-name>
+              <remote-alias>attendance_performance</remote-alias>
+              <ordinal>10</ordinal>
+              <family>student_performance_fact.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>course_gpa_avg</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[course_gpa_avg]</local-name>
+              <parent-name>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</parent-name>
+              <remote-alias>course_gpa_avg</remote-alias>
+              <ordinal>11</ordinal>
+              <family>student_performance_fact.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>course_difficulty</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[course_difficulty]</local-name>
+              <parent-name>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</parent-name>
+              <remote-alias>course_difficulty</remote-alias>
+              <ordinal>12</ordinal>
+              <family>student_performance_fact.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>course_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[course_id]</local-name>
+              <parent-name>[course.csv_70615F661D4741E4BAE57330D50B218C]</parent-name>
+              <remote-alias>course_id</remote-alias>
+              <ordinal>13</ordinal>
+              <family>course.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1000</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[course.csv_70615F661D4741E4BAE57330D50B218C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>course_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[course_name (course.csv)]</local-name>
+              <parent-name>[course.csv_70615F661D4741E4BAE57330D50B218C]</parent-name>
+              <remote-alias>course_name</remote-alias>
+              <ordinal>14</ordinal>
+              <family>course.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[course.csv_70615F661D4741E4BAE57330D50B218C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>course_gpa_avg</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[course_gpa_avg (course.csv)]</local-name>
+              <parent-name>[course.csv_70615F661D4741E4BAE57330D50B218C]</parent-name>
+              <remote-alias>course_gpa_avg</remote-alias>
+              <ordinal>15</ordinal>
+              <family>course.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[course.csv_70615F661D4741E4BAE57330D50B218C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>course_difficulty</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[course_difficulty (course.csv)]</local-name>
+              <parent-name>[course.csv_70615F661D4741E4BAE57330D50B218C]</parent-name>
+              <remote-alias>course_difficulty</remote-alias>
+              <ordinal>16</ordinal>
+              <family>course.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[course.csv_70615F661D4741E4BAE57330D50B218C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>id_finalgrade</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[id_finalgrade]</local-name>
+              <parent-name>[grade.csv_C38C653DB4084CE5946DB80A4A0DE0C9]</parent-name>
+              <remote-alias>id_finalgrade</remote-alias>
+              <ordinal>17</ordinal>
+              <family>grade.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1000</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[grade.csv_C38C653DB4084CE5946DB80A4A0DE0C9]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>final_grade</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[final_grade (grade.csv)]</local-name>
+              <parent-name>[grade.csv_C38C653DB4084CE5946DB80A4A0DE0C9]</parent-name>
+              <remote-alias>final_grade</remote-alias>
+              <ordinal>18</ordinal>
+              <family>grade.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[grade.csv_C38C653DB4084CE5946DB80A4A0DE0C9]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>id_attendancep</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[id_attendancep]</local-name>
+              <parent-name>[performance.csv_F98BB444FACE408C9CA3DF42207D372C]</parent-name>
+              <remote-alias>id_attendancep</remote-alias>
+              <ordinal>19</ordinal>
+              <family>performance.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1000</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[performance.csv_F98BB444FACE408C9CA3DF42207D372C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>attendance_performance</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[attendance_performance (performance.csv)]</local-name>
+              <parent-name>[performance.csv_F98BB444FACE408C9CA3DF42207D372C]</parent-name>
+              <remote-alias>attendance_performance</remote-alias>
+              <ordinal>20</ordinal>
+              <family>performance.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[performance.csv_F98BB444FACE408C9CA3DF42207D372C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>student_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[student_id (student.csv)]</local-name>
+              <parent-name>[student.csv_AA1D9BB5540048C0A92FB922F42DD746]</parent-name>
+              <remote-alias>student_id</remote-alias>
+              <ordinal>21</ordinal>
+              <family>student.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1000</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[student.csv_AA1D9BB5540048C0A92FB922F42DD746]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>age</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[age (student.csv)]</local-name>
+              <parent-name>[student.csv_AA1D9BB5540048C0A92FB922F42DD746]</parent-name>
+              <remote-alias>age</remote-alias>
+              <ordinal>22</ordinal>
+              <family>student.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[student.csv_AA1D9BB5540048C0A92FB922F42DD746]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>gender</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[gender (student.csv)]</local-name>
+              <parent-name>[student.csv_AA1D9BB5540048C0A92FB922F42DD746]</parent-name>
+              <remote-alias>gender</remote-alias>
+              <ordinal>23</ordinal>
+              <family>student.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[student.csv_AA1D9BB5540048C0A92FB922F42DD746]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>grade_level</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[grade_level (student.csv)]</local-name>
+              <parent-name>[student.csv_AA1D9BB5540048C0A92FB922F42DD746]</parent-name>
+              <remote-alias>grade_level</remote-alias>
+              <ordinal>24</ordinal>
+              <family>student.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[student.csv_AA1D9BB5540048C0A92FB922F42DD746]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:grade_level:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;10th Grade&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;11th Grade&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;12th Grade&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;9th Grade&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Egypt&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='course.csv' id='course.csv_70615F661D4741E4BAE57330D50B218C'>
+            <properties context=''>
+              <relation connection='textscan.10oiwza0fhjo811h8o24u1bwuar5' name='course.csv' table='[course#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='course_id' ordinal='0' />
+                  <column datatype='string' name='course_name' ordinal='1' />
+                  <column datatype='real' name='course_gpa_avg' ordinal='2' />
+                  <column datatype='string' name='course_difficulty' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='course.csv_70615F661D4741E4BAE57330D50B218C' table='[Extract].[course.csv_70615F661D4741E4BAE57330D50B218C]' type='table' />
+            </properties>
+          </object>
+          <object caption='grade.csv' id='grade.csv_C38C653DB4084CE5946DB80A4A0DE0C9'>
+            <properties context=''>
+              <relation connection='textscan.10oiwza0fhjo811h8o24u1bwuar5' name='grade.csv' table='[grade#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='id_finalgrade' ordinal='0' />
+                  <column datatype='string' name='final_grade' ordinal='1' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='grade.csv_C38C653DB4084CE5946DB80A4A0DE0C9' table='[Extract].[grade.csv_C38C653DB4084CE5946DB80A4A0DE0C9]' type='table' />
+            </properties>
+          </object>
+          <object caption='performance.csv' id='performance.csv_F98BB444FACE408C9CA3DF42207D372C'>
+            <properties context=''>
+              <relation connection='textscan.10oiwza0fhjo811h8o24u1bwuar5' name='performance.csv' table='[performance#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='id_attendancep' ordinal='0' />
+                  <column datatype='string' name='attendance_performance' ordinal='1' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='performance.csv_F98BB444FACE408C9CA3DF42207D372C' table='[Extract].[performance.csv_F98BB444FACE408C9CA3DF42207D372C]' type='table' />
+            </properties>
+          </object>
+          <object caption='student.csv' id='student.csv_AA1D9BB5540048C0A92FB922F42DD746'>
+            <properties context=''>
+              <relation connection='textscan.10oiwza0fhjo811h8o24u1bwuar5' name='student.csv' table='[student#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='student_id' ordinal='0' />
+                  <column datatype='integer' name='age' ordinal='1' />
+                  <column datatype='integer' name='gender' ordinal='2' />
+                  <column datatype='string' name='grade_level' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='student.csv_AA1D9BB5540048C0A92FB922F42DD746' table='[Extract].[student.csv_AA1D9BB5540048C0A92FB922F42DD746]' type='table' />
+            </properties>
+          </object>
+          <object caption='student_performance_fact.csv' id='student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6'>
+            <properties context=''>
+              <relation connection='textscan.10oiwza0fhjo811h8o24u1bwuar5' name='student_performance_fact.csv' table='[student_performance_fact#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='student_id' ordinal='0' />
+                  <column datatype='integer' name='age' ordinal='1' />
+                  <column datatype='integer' name='gender' ordinal='2' />
+                  <column datatype='string' name='grade_level' ordinal='3' />
+                  <column datatype='string' name='course_name' ordinal='4' />
+                  <column datatype='string' name='final_grade' ordinal='5' />
+                  <column datatype='real' name='gpa' ordinal='6' />
+                  <column datatype='integer' name='attendance_rate' ordinal='7' />
+                  <column datatype='integer' name='online_learning_hours' ordinal='8' />
+                  <column datatype='integer' name='class_participation_score' ordinal='9' />
+                  <column datatype='string' name='attendance_performance' ordinal='10' />
+                  <column datatype='real' name='course_gpa_avg' ordinal='11' />
+                  <column datatype='string' name='course_difficulty' ordinal='12' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6' table='[Extract].[student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[course_name]' />
+              <expression op='[course_name (course.csv)]' />
+            </expression>
+            <first-end-point object-id='student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6' />
+            <second-end-point object-id='course.csv_70615F661D4741E4BAE57330D50B218C' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[final_grade]' />
+              <expression op='[final_grade (grade.csv)]' />
+            </expression>
+            <first-end-point object-id='student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6' />
+            <second-end-point object-id='grade.csv_C38C653DB4084CE5946DB80A4A0DE0C9' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[attendance_performance]' />
+              <expression op='[attendance_performance (performance.csv)]' />
+            </expression>
+            <first-end-point object-id='student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6' />
+            <second-end-point object-id='performance.csv_F98BB444FACE408C9CA3DF42207D372C' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[student_id]' />
+              <expression op='[student_id (student.csv)]' />
+            </expression>
+            <first-end-point object-id='student_performance_fact.csv_CB6AD2C3939E440E965A24EEAEAA91D6' />
+            <second-end-point object-id='student.csv_AA1D9BB5540048C0A92FB922F42DD746' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name=' Course Participation by Difficulty '>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='student_performance_fact+' name='federated.1noe7e81ylplya1gyrexs0pk33ry' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1noe7e81ylplya1gyrexs0pk33ry'>
+            <column-instance column='[course_name (course.csv)]' derivation='Count' name='[cnt:course_name (course.csv):qk]' pivot='key' type='quantitative' />
+            <column caption='Course Difficulty (Course.Csv)' datatype='string' name='[course_difficulty (course.csv)]' role='dimension' type='nominal' />
+            <column caption='Course Name (Course.Csv)' datatype='string' name='[course_name (course.csv)]' role='dimension' type='nominal' />
+            <column-instance column='[course_difficulty (course.csv)]' derivation='None' name='[none:course_difficulty (course.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[course_name (course.csv)]' derivation='None' name='[none:course_name (course.csv):nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_difficulty (course.csv):nk]' />
+              <wedge-size column='[federated.1noe7e81ylplya1gyrexs0pk33ry].[cnt:course_name (course.csv):qk]' />
+              <text column='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_name (course.csv):nk]' />
+              <lod column='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_name (course.csv):nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.813093900680542' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{42CF5FAC-78A0-4D16-B08A-439024424800}' />
+    </worksheet>
+    <worksheet name='Course Difficulty vs. Average GPA '>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='student_performance_fact+' name='federated.1noe7e81ylplya1gyrexs0pk33ry' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1noe7e81ylplya1gyrexs0pk33ry'>
+            <column caption='Course Difficulty (Course.Csv)' datatype='string' name='[course_difficulty (course.csv)]' role='dimension' type='nominal' />
+            <column caption='Course Gpa Avg (Course.Csv)' datatype='real' name='[course_gpa_avg (course.csv)]' role='measure' type='quantitative' />
+            <column caption='Course Name (Course.Csv)' datatype='string' name='[course_name (course.csv)]' role='dimension' type='nominal' />
+            <column-instance column='[course_difficulty (course.csv)]' derivation='None' name='[none:course_difficulty (course.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[course_name (course.csv)]' derivation='None' name='[none:course_name (course.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[course_gpa_avg (course.csv)]' derivation='Sum' name='[sum:course_gpa_avg (course.csv):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <size column='[federated.1noe7e81ylplya1gyrexs0pk33ry].[sum:course_gpa_avg (course.csv):qk]' />
+              <text column='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_difficulty (course.csv):nk]' />
+              <text column='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_name (course.csv):nk]' />
+              <color column='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_difficulty (course.csv):nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{AEC3F148-7B0D-4681-BD0F-8ED4CE7916BA}' />
+    </worksheet>
+    <worksheet name='Final Grade Distribution per Course '>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='student_performance_fact+' name='federated.1noe7e81ylplya1gyrexs0pk33ry' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1noe7e81ylplya1gyrexs0pk33ry'>
+            <column-instance column='[student_id (student.csv)]' derivation='Count' name='[cnt:student_id (student.csv):qk]' pivot='key' type='quantitative' />
+            <column caption='Course Name (Course.Csv)' datatype='string' name='[course_name (course.csv)]' role='dimension' type='nominal' />
+            <column caption='Final Grade (Grade.Csv)' datatype='string' name='[final_grade (grade.csv)]' role='dimension' type='nominal' />
+            <column-instance column='[course_name (course.csv)]' derivation='None' name='[none:course_name (course.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[final_grade (grade.csv)]' derivation='None' name='[none:final_grade (grade.csv):nk]' pivot='key' type='nominal' />
+            <column caption='Student Id (Student.Csv)' datatype='string' name='[student_id (student.csv)]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_name (course.csv):nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1noe7e81ylplya1gyrexs0pk33ry].[cnt:student_id (student.csv):qk]</rows>
+        <cols>[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:final_grade (grade.csv):nk]</cols>
+      </table>
+      <simple-id uuid='{F2F940F2-09F1-40C1-A269-F026BCC4E052}' />
+    </worksheet>
+    <worksheet name='Online Learning Hours vs. Class Participation'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='student_performance_fact+' name='federated.1noe7e81ylplya1gyrexs0pk33ry' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1noe7e81ylplya1gyrexs0pk33ry'>
+            <column caption='Class Participation Score' datatype='integer' name='[class_participation_score]' role='measure' type='quantitative' />
+            <column-instance column='[student_id]' derivation='None' name='[none:student_id:nk]' pivot='key' type='nominal' />
+            <column caption='Online Learning Hours' datatype='integer' name='[online_learning_hours]' role='measure' type='quantitative' />
+            <column caption='Student Id' datatype='string' name='[student_id]' role='dimension' type='nominal' />
+            <column-instance column='[class_participation_score]' derivation='Sum' name='[sum:class_participation_score:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[online_learning_hours]' derivation='Sum' name='[sum:online_learning_hours:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:student_id:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:student_id:nk]' />
+              <groupfilter function='member' level='[none:student_id:nk]' member='&quot;S11019&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:student_id:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:student_id:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1noe7e81ylplya1gyrexs0pk33ry].[sum:class_participation_score:qk]</rows>
+        <cols>[federated.1noe7e81ylplya1gyrexs0pk33ry].[sum:online_learning_hours:qk]</cols>
+      </table>
+      <simple-id uuid='{A9793DA2-61B3-4E37-8278-392A4DE676C7}' />
+    </worksheet>
+    <worksheet name='Performance by Attendance'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='student_performance_fact+' name='federated.1noe7e81ylplya1gyrexs0pk33ry' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1noe7e81ylplya1gyrexs0pk33ry'>
+            <column caption='Attendance Performance' datatype='string' name='[attendance_performance]' role='dimension' type='nominal' />
+            <column-instance column='[student_id]' derivation='CountD' name='[ctd:student_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Final Grade' datatype='string' name='[final_grade]' role='dimension' type='nominal' />
+            <column-instance column='[attendance_performance]' derivation='None' name='[none:attendance_performance:nk]' pivot='key' type='nominal' />
+            <column-instance column='[final_grade]' derivation='None' name='[none:final_grade:nk]' pivot='key' type='nominal' />
+            <column caption='Student Id' datatype='string' name='[student_id]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1noe7e81ylplya1gyrexs0pk33ry].[ctd:student_id:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:attendance_performance:nk]</rows>
+        <cols>[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:final_grade:nk]</cols>
+      </table>
+      <simple-id uuid='{7F5794EE-9AB1-484F-A256-8AB9B862ED7B}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='student_performance_fact+' name='federated.1noe7e81ylplya1gyrexs0pk33ry' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1noe7e81ylplya1gyrexs0pk33ry'>
+            <column-instance column='[gpa]' derivation='Avg' name='[avg:gpa:qk]' pivot='key' type='quantitative' />
+            <column caption='Course Difficulty (Course.Csv)' datatype='string' name='[course_difficulty (course.csv)]' role='dimension' type='nominal' />
+            <column caption='Course Name (Course.Csv)' datatype='string' name='[course_name (course.csv)]' role='dimension' type='nominal' />
+            <column caption='Gpa' datatype='real' name='[gpa]' role='measure' type='quantitative' />
+            <column-instance column='[course_difficulty (course.csv)]' derivation='None' name='[none:course_difficulty (course.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[course_name (course.csv)]' derivation='None' name='[none:course_name (course.csv):nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_name (course.csv):nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1noe7e81ylplya1gyrexs0pk33ry].[avg:gpa:qk]</rows>
+        <cols>[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_difficulty (course.csv):nk]</cols>
+      </table>
+      <simple-id uuid='{71B6324C-F7B1-42E0-BBF4-5473FD89222A}' />
+    </worksheet>
+    <worksheet name='Student Performance by Grade Level'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='student_performance_fact+' name='federated.1noe7e81ylplya1gyrexs0pk33ry' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1noe7e81ylplya1gyrexs0pk33ry'>
+            <column-instance column='[gpa]' derivation='Avg' name='[avg:gpa:qk]' pivot='key' type='quantitative' />
+            <column caption='Gpa' datatype='real' name='[gpa]' role='measure' type='quantitative' />
+            <column caption='Grade Level' datatype='string' name='[grade_level]' role='dimension' type='nominal' />
+            <column-instance column='[grade_level]' derivation='None' name='[none:grade_level:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <computed-sort column='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:grade_level:nk]' direction='DESC' using='[federated.1noe7e81ylplya1gyrexs0pk33ry].[avg:gpa:qk]' />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:grade_level:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:grade_level:nk]</rows>
+        <cols>[federated.1noe7e81ylplya1gyrexs0pk33ry].[avg:gpa:qk]</cols>
+      </table>
+      <simple-id uuid='{C1A19029-21FD-4443-9801-1AF5B3A64BC6}' />
+    </worksheet>
+    <worksheet name='Top Courses by Average GPA'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='student_performance_fact+' name='federated.1noe7e81ylplya1gyrexs0pk33ry' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1noe7e81ylplya1gyrexs0pk33ry'>
+            <column-instance column='[gpa]' derivation='Avg' name='[avg:gpa:qk]' pivot='key' type='quantitative' />
+            <column caption='Course Name' datatype='string' name='[course_name]' role='dimension' type='nominal' />
+            <column caption='Gpa' datatype='real' name='[gpa]' role='measure' type='quantitative' />
+            <column-instance column='[course_name]' derivation='None' name='[none:course_name:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <single-value-per-nest-shelf-sorts>
+            <single-value-per-nest-shelf-sort dimension-to-sort='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_name:nk]' direction='ASC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_name:nk]' shelf='rows' />
+          </single-value-per-nest-shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_name:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_name:nk]</rows>
+        <cols>[federated.1noe7e81ylplya1gyrexs0pk33ry].[avg:gpa:qk]</cols>
+      </table>
+      <simple-id uuid='{4C88E7FC-D58A-4DD5-882E-CB9ACC6A802C}' />
+    </worksheet>
+    <worksheet name='Top Courses by Average GPA '>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='student_performance_fact+' name='federated.1noe7e81ylplya1gyrexs0pk33ry' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1noe7e81ylplya1gyrexs0pk33ry'>
+            <column caption='Course Gpa Avg (Course.Csv)' datatype='real' name='[course_gpa_avg (course.csv)]' role='measure' type='quantitative' />
+            <column caption='Course Name (Course.Csv)' datatype='string' name='[course_name (course.csv)]' role='dimension' type='nominal' />
+            <column-instance column='[course_name (course.csv)]' derivation='None' name='[none:course_name (course.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[course_gpa_avg (course.csv)]' derivation='Sum' name='[sum:course_gpa_avg (course.csv):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_name (course.csv):nk]' />
+              <text column='[federated.1noe7e81ylplya1gyrexs0pk33ry].[sum:course_gpa_avg (course.csv):qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_name (course.csv):nk]</rows>
+        <cols>[federated.1noe7e81ylplya1gyrexs0pk33ry].[sum:course_gpa_avg (course.csv):qk]</cols>
+      </table>
+      <simple-id uuid='{6EE3AF34-C854-4E9B-8782-87208729D6A7}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='860' maxwidth='1120' minheight='560' minwidth='1120' sizing-mode='range' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='97708' id='3' param='horz' type-v2='layout-flow' w='49286' x='50000' y='1146' />
+          <zone h='97708' id='5' param='vert' type-v2='layout-flow' w='49286' x='714' y='1146'>
+            <zone h='29513' id='8' name='Top Courses by Average GPA' w='49286' x='714' y='1146'>
+              <layout-cache fixed-size-h='198' type-h='fixed' type-w='fixed' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='17407' id='7' name='Student Performance by Grade Level' pane-specification-id='0' param='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:grade_level:nk]' type-v2='color' w='12500' x='47768' y='63410' />
+        <zone h='17407' id='9' name='Top Courses by Average GPA' pane-specification-id='0' param='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_name:nk]' type-v2='color' w='12500' x='446' y='37833' />
+        <zone h='42096' id='6' name='Student Performance by Grade Level' w='44821' x='268' y='54707' />
+        <zone h='41918' id='11' name='Online Learning Hours vs. Class Participation' w='42321' x='52679' y='3375'>
+          <layout-cache minwidth='159' type-h='fixed' type-w='scalable' />
+        </zone>
+        <zone h='13499' id='13' type-v2='dashboard-object' w='15804' x='80446' y='53464'>
+          <button action='tabdoc:goto-sheet window-id=&quot;{0369B116-B4D8-482C-830A-574D19127CD5}&quot;' button-type='text'>
+            <button-visual-state>
+              <caption>Course Analysis</caption>
+              <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+              <format attr='background-color' value='#333333' />
+            </button-visual-state>
+          </button>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1050' minheight='1050' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='15' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='14' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+                <zone fixed-size='246' h='29513' id='8' is-fixed='true' name='Top Courses by Average GPA' w='49286' x='714' y='1146'>
+                  <layout-cache fixed-size-h='198' type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='17407' id='9' name='Top Courses by Average GPA' pane-specification-id='0' param='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_name:nk]' type-v2='color' w='12500' x='446' y='37833'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='41918' id='11' is-fixed='true' name='Online Learning Hours vs. Class Participation' w='42321' x='52679' y='3375'>
+                  <layout-cache minwidth='159' type-h='fixed' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='13499' id='13' type-v2='dashboard-object' w='15804' x='80446' y='53464'>
+                  <button action='tabdoc:goto-sheet window-id=&quot;{0369B116-B4D8-482C-830A-574D19127CD5}&quot;' button-type='text'>
+                    <button-visual-state>
+                      <caption>Course Analysis</caption>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#333333' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='42096' id='6' is-fixed='true' name='Student Performance by Grade Level' w='44821' x='268' y='54707'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='17407' id='7' name='Student Performance by Grade Level' pane-specification-id='0' param='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:grade_level:nk]' type-v2='color' w='12500' x='47768' y='63410'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{86FAD4E6-6E55-4446-8F74-52F9A08FDC04}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 2'>
+      <style />
+      <size maxheight='900' maxwidth='1120' minheight='500' minwidth='1120' sizing-mode='range' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='97158' id='3' param='horz' type-v2='layout-flow' w='59822' x='39464' y='1421' />
+          <zone h='48565' id='5' param='vert' type-v2='layout-flow' w='38750' x='714' y='1421'>
+            <zone fixed-size='190' h='35169' id='8' is-fixed='true' name='Top Courses by Average GPA' w='38750' x='714' y='1421'>
+              <layout-cache type-h='fixed' type-w='fixed' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone h='48593' id='10' param='horz' type-v2='layout-flow' w='38750' x='714' y='49986'>
+            <zone h='48593' id='11' name='Course Difficulty vs. Average GPA ' w='38750' x='714' y='49986'>
+              <layout-cache cell-count-w='1' type-h='cell' type-w='cell' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='17407' id='9' name='Top Courses by Average GPA' pane-specification-id='0' param='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_name:nk]' type-v2='color' w='12500' x='357' y='32149' />
+        <zone h='13854' id='12' name='Course Difficulty vs. Average GPA ' pane-specification-id='0' param='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_difficulty (course.csv):nk]' type-v2='color' w='12500' x='625' y='60568' />
+        <zone h='17407' id='15' name='Final Grade Distribution per Course ' pane-specification-id='0' param='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_name (course.csv):nk]' type-v2='color' w='12500' x='86786' y='7105' />
+        <zone h='45648' id='16' param='horz' type-v2='layout-flow' w='39643' x='38304' y='40853' />
+        <zone h='36945' id='14' name='Final Grade Distribution per Course ' w='33571' x='40714' y='1599'>
+          <layout-cache cell-count-w='4' minheight='184' non-cell-size-w='59' type-h='scalable' type-w='cell' />
+        </zone>
+        <zone h='39254' id='17' name=' Course Participation by Difficulty ' w='36607' x='39643' y='42806'>
+          <layout-cache cell-count-w='1' type-h='cell' type-w='cell' />
+        </zone>
+        <zone h='9236' id='18' type-v2='dashboard-object' w='21161' x='78393' y='47247'>
+          <button action='tabdoc:goto-sheet window-id=&quot;{A6332526-759D-4CF6-815C-59713C0F8F2E}&quot;' button-type='text'>
+            <button-visual-state>
+              <caption>Student Performance Insights</caption>
+              <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+              <format attr='background-color' value='#333333' />
+            </button-visual-state>
+          </button>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1450' minheight='1450' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='20' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97158' id='19' param='vert' type-v2='layout-flow' w='98572' x='714' y='1421'>
+                <zone fixed-size='280' h='35169' id='8' is-fixed='true' name='Top Courses by Average GPA' w='38750' x='714' y='1421'>
+                  <layout-cache type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='17407' id='9' name='Top Courses by Average GPA' pane-specification-id='0' param='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_name:nk]' type-v2='color' w='12500' x='357' y='32149'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='36945' id='14' is-fixed='true' name='Final Grade Distribution per Course ' w='33571' x='40714' y='1599'>
+                  <layout-cache cell-count-w='4' minheight='184' non-cell-size-w='59' type-h='scalable' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='17407' id='15' name='Final Grade Distribution per Course ' pane-specification-id='0' param='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_name (course.csv):nk]' type-v2='color' w='12500' x='86786' y='7105'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='39254' id='17' is-fixed='true' name=' Course Participation by Difficulty ' w='36607' x='39643' y='42806'>
+                  <layout-cache cell-count-w='1' type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='9236' id='18' type-v2='dashboard-object' w='21161' x='78393' y='47247'>
+                  <button action='tabdoc:goto-sheet window-id=&quot;{A6332526-759D-4CF6-815C-59713C0F8F2E}&quot;' button-type='text'>
+                    <button-visual-state>
+                      <caption>Student Performance Insights</caption>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#333333' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='48593' id='11' is-fixed='true' name='Course Difficulty vs. Average GPA ' w='38750' x='714' y='49986'>
+                  <layout-cache cell-count-w='1' type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='13854' id='12' name='Course Difficulty vs. Average GPA ' pane-specification-id='0' param='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_difficulty (course.csv):nk]' type-v2='color' w='12500' x='625' y='60568'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{9943583C-B372-47CF-B52C-716338081A65}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Student Performance by Grade Level'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:grade_level:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{31DC59D1-0F95-4063-9A8B-19256094D650}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{DFAFCB68-E616-4BBA-9DE9-5A5158F2C731}' />
+    </window>
+    <window class='worksheet' name='Top Courses by Average GPA'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_name:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{0544E405-EBF7-46EA-A838-979A168665AA}' />
+    </window>
+    <window class='worksheet' name='Performance by Attendance'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1noe7e81ylplya1gyrexs0pk33ry].[ctd:student_id:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{35B50BB2-753F-424C-8476-6238529CE58F}' />
+    </window>
+    <window class='worksheet' name='Online Learning Hours vs. Class Participation'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{2FA940F9-EECF-45D1-922E-C5EDAD662F52}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Online Learning Hours vs. Class Participation'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Student Performance by Grade Level' />
+        <viewpoint name='Top Courses by Average GPA' />
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{A6332526-759D-4CF6-815C-59713C0F8F2E}' />
+    </window>
+    <window class='worksheet' name='Course Difficulty vs. Average GPA '>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_difficulty (course.csv):nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{644C7026-7D76-4EF8-AB86-83B6B80E24EF}' />
+    </window>
+    <window class='worksheet' name='Top Courses by Average GPA '>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_name (course.csv):nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{34B02B6F-240E-465E-9068-DC88A8DC89F2}' />
+    </window>
+    <window class='worksheet' name='Final Grade Distribution per Course '>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_name (course.csv):nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{3F68B266-C85A-406E-AEAD-890ABF8CCA60}' />
+    </window>
+    <window class='worksheet' name=' Course Participation by Difficulty '>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1noe7e81ylplya1gyrexs0pk33ry].[none:course_difficulty (course.csv):nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{5C49510A-60BA-41A2-B8BD-D23B33491A0B}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 2'>
+      <viewpoints>
+        <viewpoint name=' Course Participation by Difficulty '>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Course Difficulty vs. Average GPA '>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Final Grade Distribution per Course '>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Top Courses by Average GPA' />
+      </viewpoints>
+      <active id='18' />
+      <simple-id uuid='{0369B116-B4D8-482C-830A-574D19127CD5}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Dashboard 2' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
